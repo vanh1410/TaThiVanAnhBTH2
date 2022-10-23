@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Create Person";
+}
+
+
+<div class="main">
+    <form asp-action="Create">
+        <label for="id">Person ID: </label>
+        <input id="id" class="form-control" type="number" name="PersonID">
+        <hr/>
+        <label for="name">Person name: </label>
+        <input id="name" class="form-control" type="text" name="PersonName">
+        <hr/>
+        <button class="btn btn-success" type="submit">Create</button>
+    </form>
+</div>
+

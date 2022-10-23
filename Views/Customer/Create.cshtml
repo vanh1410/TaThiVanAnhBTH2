@@ -1,0 +1,24 @@
+﻿@{
+	ViewData["Title"] = "Create Customer";
+}
+
+<div class="main">
+	<form asp-action="Create">
+		<label for="id">Customer ID:</label>
+		<input id="id" class="form-control" type="number" name="CustomerID">
+		<hr/>
+		<label for="name">Customer name:</label>
+		<input id="name" class="form-control" type="text" name="CustomerName">
+		<hr/>
+		<label for="age">Customer age:</label>
+		<input id="age" class="form-control" type="text" name="CustomerAge">
+		<hr/>
+		<label for="phone">Customer phone:</label>
+		<input id="phone" class="form-control" type="text" name="CustomerPhone">
+		<hr/>
+		<label for="address">Customer address:</label>
+		<input id="address" class="form-control" type="text" name="CustomerAddress">
+		<hr/>
+		<button class="btn btn-success" type="submit">Create</button>
+	</form>
+</div>
