@@ -39,26 +39,22 @@ namespace TaThiVanAnhBTH2.Controllers
             return _context.Students.Any(e => e.StudentID == id);
         }
 
-        //GET: Student/Edit
         public async Task<IActionResult> Edit(string id)
         {
             if(id == null)
             {
-                //return NotFound();
                 return View("NotFound");
             }
 
             var student = await _context.Students.FindAsync(id);
             if(student == null)
             {
-                //return NotFound();
                 return View("NotFound");
             }
             return View(student);
 
         }
 
-        //POST: Student/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("StudentID,StudentName")] Student std)
@@ -66,14 +62,11 @@ namespace TaThiVanAnhBTH2.Controllers
 
             if (id != std.StudentID)
             {
-                Console.WriteLine("khac");
-                //return NotFound();
                 return View("NotFound");
             }
 
             if (ModelState.IsValid)
             {
-                Console.WriteLine("Valid");
                 try
                 {
                     _context.Update(std);
@@ -81,11 +74,8 @@ namespace TaThiVanAnhBTH2.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    Console.WriteLine("Exception");
                     if (!StudentExists(std.StudentID))
                     {
-                        Console.WriteLine("Not exist");
-                        //return NotFound();
                         return View("NotFound");
                     }
                     else
@@ -98,12 +88,10 @@ namespace TaThiVanAnhBTH2.Controllers
             return View(std);
         }
 
-        //GET: Product/Delete
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
-                //return NotFound();
                 return View("NotFound");
             }
 
@@ -111,13 +99,11 @@ namespace TaThiVanAnhBTH2.Controllers
                 .FirstOrDefaultAsync(m => m.StudentID == id);
             if (std == null)
             {
-                //return NotFound();
                 return View("NotFound");
             }
             return View(std);
         }
 
-        //POST: Product/Delete
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

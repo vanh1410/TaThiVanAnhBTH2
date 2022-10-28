@@ -9,6 +9,7 @@
 		<th>Customer Age</th>
 		<th>Customer Phone</th>
 		<th>Customer Address</th>
+		<th></th>
 	</tr>
 	@foreach (var item in Model)
 	{
@@ -18,6 +19,10 @@
 			<td>@Html.DisplayFor(m => item.CustomerAge)</td>
 			<td>@Html.DisplayFor(m => item.CustomerPhone)</td>
 			<td>@Html.DisplayFor(m => item.CustomerAddress)</td>
+			<td>
+				<a asp-action="Edit" asp-route-id="@item.CustomerID">Sửa</a>
+				<a asp-action="Delete" asp-route-id="@item.CustomerID">Xóa</a>
+			</td>
 		</tr>
 	}
 </table>
