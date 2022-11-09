@@ -1,4 +1,11 @@
 ﻿@model IEnumerable<TaThiVanAnhBTH2.Models.Student>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
 <p>
 	<a class="btn btn-success" asp-action="Create">Create a new Student</a>
 </p>
@@ -14,8 +21,9 @@
 			<td>@Html.DisplayFor(m => item.StudentID)</td>
 			<td>@Html.DisplayFor(m => item.StudentName)</td>
 			<td>
-				<a asp-action="Edit" asp-route-id="@item.StudentID">Sửa</a>
-				<a asp-action="Delete" asp-route-id="@item.StudentID">Xóa</a>
+				<a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a>
+				<a asp-action="Details" asp-route-id="@item.StudentID">Details</a>
+				<a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
 			</td>
 		</tr>
 	}

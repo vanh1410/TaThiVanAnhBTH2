@@ -282,3 +282,7 @@ C:\Users\Van Anh\TaThiVanAnhBTH2\obj\Debug\net6.0\refint\TaThiVanAnhBTH2.dll
 C:\Users\Van Anh\TaThiVanAnhBTH2\obj\Debug\net6.0\TaThiVanAnhBTH2.pdb
 C:\Users\Van Anh\TaThiVanAnhBTH2\obj\Debug\net6.0\TaThiVanAnhBTH2.genruntimeconfig.cache
 C:\Users\Van Anh\TaThiVanAnhBTH2\obj\Debug\net6.0\ref\TaThiVanAnhBTH2.dll
+C:\Users\Van Anh\TaThiVanAnhBTH2\bin\Debug\net6.0\EPPlus.dll
+C:\Users\Van Anh\TaThiVanAnhBTH2\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\Van Anh\TaThiVanAnhBTH2\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\Van Anh\TaThiVanAnhBTH2\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll

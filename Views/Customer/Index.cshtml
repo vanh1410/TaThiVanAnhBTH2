@@ -1,4 +1,11 @@
 ﻿@model IEnumerable<TaThiVanAnhBTH2.Models.Customer>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
 <p>
 	<a class="btn btn-success" asp-action="Create">Create a new Customer</a>
 </p>
@@ -20,8 +27,9 @@
 			<td>@Html.DisplayFor(m => item.CustomerPhone)</td>
 			<td>@Html.DisplayFor(m => item.CustomerAddress)</td>
 			<td>
-				<a asp-action="Edit" asp-route-id="@item.CustomerID">Sửa</a>
-				<a asp-action="Delete" asp-route-id="@item.CustomerID">Xóa</a>
+				<a asp-action="Edit" asp-route-id="@item.CustomerID">Edit</a>
+				<a asp-action="Details" asp-route-id="@item.CustomerID">Details</a>
+				<a asp-action="Delete" asp-route-id="@item.CustomerID">Delete</a>
 			</td>
 		</tr>
 	}
