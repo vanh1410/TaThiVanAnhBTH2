@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TaThiVanAnhBTH2.Data;
 using TaThiVanAnhBTH2.Models;
@@ -21,10 +22,12 @@ namespace TaThiVanAnhBTH2.Controllers
         }
         public IActionResult Create()
         {
+            ViewData["FacultyID"] = new SelectList(_context.Faculties, "FacultyID", "FacultyName");
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Student std)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("StudentID,StudentName,FacultyID")] Student std)
         {
             if (ModelState.IsValid)
             {
@@ -32,6 +35,7 @@ namespace TaThiVanAnhBTH2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["FacultyID"] = new SelectList(_context.Faculties, "FacultyID", "FacultyName", std.FacultyID);
             return View(std);
         }
 

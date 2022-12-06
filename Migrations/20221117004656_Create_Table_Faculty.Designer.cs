@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaThiVanAnhBTH2.Data;
 
@@ -10,9 +11,10 @@ using TaThiVanAnhBTH2.Data;
 namespace TaThiVanAnhBTH2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221117004656_Create_Table_Faculty")]
+    partial class Create_Table_Faculty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,30 +108,13 @@ namespace TaThiVanAnhBTH2.Migrations
                     b.Property<string>("StudentID")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("FacultyID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("StudentName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StudentID");
 
-                    b.HasIndex("FacultyID");
-
                     b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("TaThiVanAnhBTH2.Models.Student", b =>
-                {
-                    b.HasOne("TaThiVanAnhBTH2.Models.Faculty", "Faculty")
-                        .WithMany()
-                        .HasForeignKey("FacultyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Faculty");
                 });
 #pragma warning restore 612, 618
         }
